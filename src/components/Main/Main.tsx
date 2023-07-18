@@ -1,15 +1,15 @@
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
-import { Container } from 'react-bootstrap';
+import { SideBar } from '../SideBar/SideBar';
 
 export const Main = () => {
   return (
     <main className="main">
-      <Container>
-        <Suspense fallback={null}>
-          <Outlet />
-        </Suspense>
-      </Container>
+      <SideBar />
+
+      <Suspense fallback={null}>
+        <Outlet />
+      </Suspense>
     </main>
   );
 };

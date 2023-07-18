@@ -1,0 +1,17 @@
+.navbar {
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__link-icon {
+    fill: $link-color;
+    margin-right: 8px ;
+  }
+
+  &__link-text {
+    color: $link-color;
+  }
+
+}
