@@ -5,24 +5,26 @@ import { FaCartShopping } from 'react-icons/fa6';
 export const NavigationMenu = () => {
   return (
     <>
-      <ul>
-        <li className="py-2">
-          <a href="/" className="nav-link px-2 vertical-center">
-            <BsFillBoxFill className="navbar__link-icon" />{' '}
-            <span className="ms-1 d-none d-sm-inline navbar__link-text">
-              Products
-            </span>
-          </a>
-        </li>
-        <li className="py-2">
-          <a href="/orders" className="nav-link px-2 vertical-center">
-            <FaCartShopping className="navbar__link-icon" />{' '}
-            <span className="ms-1 d-none d-sm-inline navbar__link-text">
-              Orders
-            </span>
-          </a>
-        </li>
-      </ul>
+      <div className="col-auto min-vh-100 bg-light py-3">
+        <ul className="navbar-list">
+          <li className="py-2">
+            <a href="/" className="nav-link px-2 vertical-center">
+              <BsFillBoxFill className="navbar-link__icon" />{' '}
+              <span className="ms-1 d-none d-sm-inline navbar-link__text">
+                Products
+              </span>
+            </a>
+          </li>
+          <li className="py-2">
+            <a href="/orders" className="nav-link px-2 vertical-center">
+              <FaCartShopping className="navbar-link__icon" />{' '}
+              <span className="ms-1 d-none d-sm-inline navbar-link__text">
+                Orders
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
     </>
   );
 };

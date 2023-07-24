@@ -1,15 +1,21 @@
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
-import { SideBar } from '../SideBar/SideBar';
+import { NavigationMenu } from '../NavigationMenu/NavigationMenu';
 
 export const Main = () => {
   return (
     <main className="main">
-      <SideBar />
+      <div className="container-fluid">
+        <div className="row">
+          <NavigationMenu />
 
-      <Suspense fallback={null}>
-        <Outlet />
-      </Suspense>
+          <div className="col py-2">
+            <Suspense fallback={null}>
+              <Outlet />
+            </Suspense>
+          </div>
+        </div>
+      </div>
     </main>
   );
 };

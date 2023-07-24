@@ -1,10 +1,10 @@
-import { Header } from '../Header/Header';
+import { TopMenu } from '../TopMenu/TopMenu';
 import { Main } from '../Main/Main';
 
 export const SharedLayout = () => {
   return (
     <>
-      <Header />
+      <TopMenu />
       <Main />
     </>
   );

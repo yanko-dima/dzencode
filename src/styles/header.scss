@@ -1,0 +1,60 @@
+.header {
+  @extend .vertical-center;
+  @extend .space-between;
+  @extend .p-2;
+  background-color: $container-bg;
+  color: $primary-text-color;
+  box-shadow: $primary-box-shadow;
+}
+
+.info {
+ @extend .vertical-center;
+
+  &-date {
+    @extend .p-2;
+    @extend .as-column;
+    width: 200px;
+}
+
+  &-date__name {
+    color: $secondary-text-color;
+  }
+
+  &-date__body {
+    @extend .vertical-center;
+    gap: 8px;
+    color: $secondary-text-color;
+  }
+
+  &-time {
+    @extend .vertical-center;
+  }
+
+  &-time__icon {
+    fill: $primary-color;
+    margin-right: 2px;
+  }
+
+  &-time__text {
+    color: $secondary-text-color;
+  }
+
+  &-sessions {
+    @extend .p-2;
+    @extend .as-column;
+  }
+
+  &-sessions__name {
+    color: $secondary-text-color;
+  }
+
+  &-sessions__body {
+    color: $secondary-text-color;
+  }
+
+  &-session__name {
+    color: $secondary-text-color;
+  }
+
+
+}

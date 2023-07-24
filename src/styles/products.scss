@@ -1,7 +1,5 @@
 .products {
-  &__title {
-    font-size: 40px;
-    line-height: 1.4;
-    font-weight: 600;
+  &-title {
+    @extend .title;
   }
 }

@@ -1,7 +1,7 @@
 export default function Orders() {
   return (
     <>
-      <h1>Orders page</h1>
+      <h1 className="orders-title">Orders page</h1>
     </>
   );
 }
