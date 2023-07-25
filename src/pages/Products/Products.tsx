@@ -7,6 +7,8 @@ export default function Products() {
 
   return (
     <>
+      <h1 className="orders-title">Products</h1>
+
       {isLoading && !error && <Loader />}
       {!isLoading && !error && (
         <ListGroup as="ul">

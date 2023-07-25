@@ -1,13 +1,13 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { PRODUCTS } from '../../constants/products';
+import { PRODUCTS } from '../../constants/redux';
 import { AxiosInstance } from '../../api/AxiosInstance';
 
 const {
   FETCH_PRODUCTS,
-  // FETCH_PRODUCT_BY_ID,
-  // CREATE_PRODUCT,
-  // UPDATE_PRODUCT,
-  // DELETE_PRODUCT,
+  FETCH_PRODUCT_BY_ID,
+  CREATE_PRODUCT,
+  UPDATE_PRODUCT,
+  DELETE_PRODUCT,
 } = PRODUCTS;
 
 export const getProducts = createAsyncThunk(

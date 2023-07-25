@@ -5,3 +5,11 @@ export const PRODUCTS = {
   UPDATE_PRODUCT: 'products/UPDATE_PRODUCT',
   DELETE_PRODUCT: 'products/DELETE_PRODUCT',
 };
+
+export const ORDERS = {
+  FETCH_ORDERS: 'orders/FETCH_ORDERS',
+  FETCH_ORDER_BY_ID: 'orders/FETCH_ORDER_BY_ID',
+  CREATE_ORDER: 'orders/CREATE_ORDER',
+  UPDATE_ORDER: 'orders/UPDATE_ORDER',
+  DELETE_ORDER: 'orders/DELETE_ORDER',
+};

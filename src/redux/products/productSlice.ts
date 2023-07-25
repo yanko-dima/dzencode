@@ -1,7 +1,7 @@
 import { getProducts } from './operations';
 import { createSlice } from '@reduxjs/toolkit';
 import {
-  handleProductFulfilled,
+  handleProductsFulfilled,
   handleProductsPending,
   handleProductsReject,
 } from '../../utils/redux';
@@ -20,7 +20,7 @@ const productSlice = createSlice({
   extraReducers: builder => {
     builder
       .addCase(getProducts.pending, handleProductsPending)
-      .addCase(getProducts.fulfilled, handleProductFulfilled)
+      .addCase(getProducts.fulfilled, handleProductsFulfilled)
       .addCase(getProducts.rejected, handleProductsReject);
   },
 });
