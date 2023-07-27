@@ -1,6 +1,6 @@
 import React from 'react';
 import { ListGroup } from 'react-bootstrap';
-import { OrdersProducts } from '../../../components/CollapseProducts/OrdersProducts';
+import { OrdersProducts } from './OrdersProducts';
 import { OrdersItem } from './OrdersItem';
 import { IOrdersList } from '../../../models/IOrders';
 

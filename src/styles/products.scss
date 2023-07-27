@@ -86,7 +86,6 @@
     color: $primary-text-color;
   }
 
-
   &-item__price {
     @extend .col-md-1;
   }
@@ -108,5 +107,10 @@
 
   &-item__trash {
     //@extend .col-md-1;
+  }
+
+  &-title__placeholder {
+    @extend .fs186;
+    color: $secondary-text-color;
   }
 }

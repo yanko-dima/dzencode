@@ -46,9 +46,14 @@
     color: $primary-text-color;
   }
 
-  &-item__quantity-wrap {
+  &-item__quantity-wrap-large {
     @extend .flex-column;
     @extend .col-md-2;
+  }
+
+  &-item__quantity-wrap-small {
+    @extend .flex-column;
+    @extend .col-md-6;
   }
 
   &-item__quantity-number {
@@ -61,9 +66,14 @@
     color: $secondary-text-color;
   }
 
-  &-item__date {
+  &-item__date-large {
     @extend .flex-column;
     @extend .col-md-3;
+  }
+
+  &-item__date-small {
+    @extend .flex-column;
+    @extend .col-md-6;
   }
 
   &-item__date-first {
@@ -91,16 +101,46 @@
     color: $primary-text-color;
   }
 
-  &-products-wrap {
+  &-products__close {
+    display: none;
+  }
+
+  &-products__open {
+    display: block;
+    @extend .col-md-8;
+  }
+
+  &-products__wrap {
     position: relative;
+  }
+
+  &-products__title {
+    @extend .fs186;
+    color: $primary-text-color;
+    margin-bottom: 12px;
+  }
+
+  &-products__card {
+    border: 1px solid $body-bg;
+    border-radius: 8px;
+    box-shadow: $primary-box-shadow;
   }
 
   &-products__item {
     @extend .vertical-center;
-    @extend .space-between;
+    gap: 12px;
     border: 1px solid $body-bg;
     border-radius: 8px;
     box-shadow: $primary-box-shadow;
+  }
+
+  &-products__item:not(:last-child) {
+    margin-bottom: 12px;
+  }
+
+  &-products__item:hover, &-products__item:focus {
+    background-color: $body-bg;
+    box-shadow: $secondary-box-shadow;
   }
 
   &-products-close {
@@ -110,14 +150,63 @@
     justify-content: center;
     width: 25px;
     height: 25px;
-    top: -15px;
-    right: -15px;
+    top: 8px;
+    right: 8px;
     background-color: $container-bg;
-    border: 1px solid $primary-border-color;
+    //border: 1px solid $primary-border-color;
     border-radius: 25px;
     box-shadow: $primary-box-shadow;
   }
 
+  &-products__description {
+    @extend .flex-column;
+  }
+
+  &-products__name {
+    @extend .fs165;
+    color: $primary-text-color;
+  }
+
+  &-products__serial {
+    @extend .fs144;
+    color: $secondary-text-color;
+  }
+
+  //&-modal-list {
+  //
+  //}
+
+  &-modal-item {
+    @extend .vertical-center;
+    gap: 12px;
+    border: 1px solid $body-bg;
+    border-radius: 8px;
+    box-shadow: $primary-box-shadow;
+    padding: 8px;
+  }
+
+  &-modal-item:hover, &-modal-item:focus {
+    background-color: $body-bg;
+    box-shadow: $secondary-box-shadow;
+  }
+
+  &-modal-item:not(:last-child) {
+    margin-bottom: 12px;
+  }
+
+  &-modal-item__description {
+    @extend .flex-column;
+  }
+
+  &-modal-item__name {
+   @extend .fs165;
+    color: $primary-text-color;
+  }
+
+  &-modal-item__serial {
+    @extend .fs144;
+    color: $secondary-text-color;
+  }
 }
 
 

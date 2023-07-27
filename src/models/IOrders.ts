@@ -1,3 +1,5 @@
+import { IProduct } from './IProducts';
+
 export interface IOrder {
   id: string;
   title: string;
@@ -40,4 +42,26 @@ export interface IOrdersItemSum {
 
 export interface IOrdersItemQuantity {
   quantity: number;
+  isOrderOpen: boolean;
+}
+
+export interface IDeleteOrderList {
+  filteredProducts: IProduct[];
+}
+
+export interface IDeleteOrderItem {
+  filteredProducts: IProduct[];
+}
+
+export interface IOrderProductsList {
+  filteredProducts: IProduct[];
+}
+
+export interface IOrdersProductsItem {
+  filteredProducts: IProduct[];
+}
+
+export interface IOrdersItemDate {
+  createdAt: string;
+  isOrderOpen: boolean;
 }

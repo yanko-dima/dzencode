@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { ListGroup } from 'react-bootstrap';
 import { useProducts } from '../../../hooks/useProducts';
 import { OrdersItemDate } from './OrdersItemDate';
-import { ModalDeleteOrder } from '../../../components/Modals/ModalDeleteOrder';
+import { DeleteOrder } from '../../../components/Modals/DeleteOrder/DeleteOrder';
 import { ButtonTrash } from '../../../components/Buttons/ButtonTrash';
 import { OrdersItemSum } from './OrdersItemSum';
 import { OrdersItemQuantity } from './OrdersItemQuantity';
@@ -44,8 +44,11 @@ export const OrdersItem: React.FC<IOrdersItem> = ({
               {!isOrderOpen && (
                 <div className={'orders-item__title p-2'}>{title}</div>
               )}
-              <OrdersItemQuantity quantity={productsQuantity} />
-              <OrdersItemDate createdAt={createdAt} />
+              <OrdersItemQuantity
+                quantity={productsQuantity}
+                isOrderOpen={isOrderOpen}
+              />
+              <OrdersItemDate createdAt={createdAt} isOrderOpen={isOrderOpen} />
               {!isOrderOpen && <OrdersItemSum orderId={id} />}
             </div>
 
@@ -61,7 +64,7 @@ export const OrdersItem: React.FC<IOrdersItem> = ({
       })}
 
       {showModal && (
-        <ModalDeleteOrder
+        <DeleteOrder
           showModal={showModal}
           handleModalShowToggle={handleModalShowToggle}
           orderId={orderId}

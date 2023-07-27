@@ -1,9 +1,11 @@
 .button {
   &-trash__link {
     @extend .center;
-    width: 30px;
-    height: 30px;
+    //width: 30px;
+    //height: 30px;
     box-shadow: $primary-box-shadow;
+    border: none;
+    background-color: $body-bg;
     border-radius: 30px;
     cursor: pointer;
   }

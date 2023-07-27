@@ -8,8 +8,8 @@ export const ButtonTrash: React.FC<IButtonTrash> = ({
   style,
 }) => {
   return (
-    <button
-      type="button"
+    <div
+      // type="button"
       onClick={() => {
         handleDeleteIconClick(id);
       }}
@@ -17,6 +17,6 @@ export const ButtonTrash: React.FC<IButtonTrash> = ({
       style={style}
     >
       <MdDeleteForever className={'button-trash__icon'} />
-    </button>
+    </div>
   );
 };
