@@ -1,9 +1,32 @@
+import React, { useState } from 'react';
 import { useOrders } from '../../hooks/useOrders';
 import { Loader } from '../../components/Loader/Loader';
-import { ListGroup } from 'react-bootstrap';
-
+import { OrdersList } from './components/OrdersList';
 export default function Orders() {
+  const [isOrderOpen, setIsOrderOpen] = useState(false);
+  const [orderId, setOrderId] = useState<string>('');
+
   const { orders, isLoading, error } = useOrders();
+
+  const handleRowClick = (id: string): void => {
+    if (id === orderId && isOrderOpen) {
+      setIsOrderOpen(false);
+    }
+
+    if (id === orderId && !isOrderOpen) {
+      setIsOrderOpen(true);
+    }
+
+    if (id !== orderId) {
+      setIsOrderOpen(true);
+    }
+
+    setOrderId(id);
+  };
+
+  const handleCloseProducts = () => {
+    setIsOrderOpen(false);
+  };
 
   return (
     <>
@@ -11,19 +34,16 @@ export default function Orders() {
 
       {isLoading && !error && <Loader />}
       {!isLoading && !error && (
-        <ListGroup as="ul">
-          {orders.map(order => {
-            const { id, title, description } = order;
-
-            return (
-              <ListGroup.Item as="li" key={id}>
-                <div>{title}</div>
-                <div>{description}</div>
-              </ListGroup.Item>
-            );
-          })}
-        </ListGroup>
+        <OrdersList
+          orderId={orderId}
+          handleCloseProducts={handleCloseProducts}
+          handleRowClick={handleRowClick}
+          isOrderOpen={isOrderOpen}
+          orders={orders}
+          setOrderId={setOrderId}
+        />
       )}
+      {!isLoading && error && <h2>Issue With Orders Loading</h2>}
     </>
   );
 }

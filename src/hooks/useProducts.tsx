@@ -1,16 +1,22 @@
+import { useEffect } from 'react';
+import { useAppDispatch } from './redux';
+import { useSelector } from 'react-redux';
 import {
   selectAllProducts,
   selectIsProductsLoading,
   selectProductsError,
+  selectVisibleProducts,
 } from '../redux/products/selectors';
-import { useSelector } from 'react-redux';
-import { useEffect } from 'react';
 import { getProducts } from '../redux/products/operations';
-import { useAppDispatch } from './redux';
 export const useProducts = () => {
   const dispatch = useAppDispatch();
 
+  const getOrderProducts = (orderId: string) => {
+    return products.filter(product => product.order === orderId);
+  };
+
   const products = useSelector(selectAllProducts);
+  const visibleProducts = useSelector(selectVisibleProducts);
   const isLoading = useSelector(selectIsProductsLoading);
   const error = useSelector(selectProductsError);
 
@@ -20,7 +26,9 @@ export const useProducts = () => {
 
   return {
     products,
+    visibleProducts,
     isLoading,
     error,
+    getOrderProducts,
   };
 };

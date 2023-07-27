@@ -17,6 +17,17 @@ ul {
   align-items: center;
 }
 
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
 .as-column {
   display: flex;
   flex-direction: column;
@@ -25,3 +36,27 @@ ul {
 .space-between {
   justify-content: space-between;
 }
+.fs144 {
+  font-size: 14px;
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+.fs145 {
+  font-size: 14px;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+.fs155 {
+  font-size: 15px;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+.fs165 {
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: 500;
+}
+

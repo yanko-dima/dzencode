@@ -15,6 +15,12 @@ export const useOrders = () => {
   const isLoading = useSelector(selectIsOrdersLoading);
   const error = useSelector(selectOrdersError);
 
+  const getOrderName = (orderId: string) => {
+    const findOrder = orders.find(order => order.id === orderId);
+
+    return findOrder ? findOrder.title : `Order: ${orderId}`;
+  };
+
   useEffect(() => {
     dispatch(getOrders());
   }, [dispatch]);
@@ -23,5 +29,6 @@ export const useOrders = () => {
     orders,
     isLoading,
     error,
+    getOrderName,
   };
 };

@@ -2,5 +2,60 @@
   &-title {
     @extend .title;
   }
+
+  &-list__wrapper {
+    display: flex;
+    gap: 12px;
+  }
+
+  &-list {
+    gap: 12px;
+  }
+
+  &-item {
+    @extend .vertical-center;
+    gap: 12px;
+    border: 1px solid $primary-border-color;
+  }
+
+  &-products-wrap {
+    position: relative;
+  }
+
+  &-products-close {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+    top: -15px;
+    right: -15px;
+    background-color: $container-bg;
+    border: 1px solid $primary-border-color;
+    border-radius: 25px;
+    box-shadow: $primary-box-shadow;
+  }
+
+  &-item__title {
+    @extend .fs165;
+    color: $primary-text-color;
+  }
+
+  &-item__quantity-wrap {
+    @extend .flex-column;
+  }
+
+  &-item__quantity-number {
+    @extend .fs165;
+    color: $primary-text-color;
+  }
+
+  &-item__quantity-name {
+    @extend .fs145;
+    color: $secondary-text-color;
+  }
+
 }
+
 

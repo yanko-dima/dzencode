@@ -1,24 +1,54 @@
+export interface IProductGuarantee {
+  start: string;
+  end: string;
+}
+
 export interface IProduct {
   id: string;
-  serialNumber: number | null;
+  serialNumber: string;
   isNew: boolean;
-  photo: string | null;
-  title: string | null;
-  type: string | null;
-  specification: string | null;
-  guarantee: {
-    start: string | null;
-    end: string | null;
-  };
+  photo?: string;
+  title: string;
+  type: string;
+  specification: string;
+  guarantee: IProductGuarantee;
   price: [
-    { value: number | null; symbol: string; isDefault: boolean },
-    { value: number | null; symbol: string; isDefault: boolean },
+    { value: number; symbol: string; isDefault: boolean },
+    { value: number; symbol: string; isDefault: boolean },
   ];
-  order: string | null;
+  order: string;
 }
 
 export interface IProductState {
   items: IProduct[];
   isLoading: boolean;
   error: unknown | null;
+}
+
+export interface IProductsList {
+  visibleProducts: IProduct[];
+}
+
+export interface IProductsItem {
+  visibleProducts: IProduct[];
+}
+
+export interface IProductsItemGuarantee {
+  guarantee: IProductGuarantee;
+}
+
+export interface IProductsItemPrice {
+  price: [
+    { value: number; symbol: string; isDefault: boolean },
+    { value: number; symbol: string; isDefault: boolean },
+  ];
+}
+
+export interface IProductsItemOrder {
+  order: string;
+}
+
+export interface IProductsItemTrash {
+  handleDeleteProduct: (id: string) => void;
+  id: string;
 }

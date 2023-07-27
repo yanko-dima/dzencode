@@ -2,4 +2,110 @@
   &-title {
     @extend .title;
   }
+
+  &-bar {
+    @extend .vertical-center;
+    @extend .space-between;
+    margin-bottom: 20px;
+  }
+
+  //&-filter {
+  //
+  //}
+
+  &-filter__title {
+    @extend .fs165;
+  }
+
+  &-filter__wrapper {
+    @extend .vertical-center;
+    gap: 4px;
+  }
+
+  &-filter__button {
+    box-shadow: $primary-box-shadow;
+  }
+
+  &-filter__button:hover, &-filter__button:focus {
+  box-shadow: $secondary-box-shadow;
+}
+
+
+  &-lisst__wrapper {
+
+  }
+
+  &-list {
+
+  }
+
+  &-item {
+    @extend .vertical-center;
+    @extend .space-between;
+    border: 1px solid $body-bg;
+    border-radius: 8px;
+    box-shadow: $primary-box-shadow;
+  }
+
+  &-item:hover, &-item:focus {
+    background-color: $body-bg;
+    box-shadow: $secondary-box-shadow;
+  }
+
+  &-item:not(:last-child) {
+    margin-bottom: 12px;
+  }
+
+  &-item__title {
+    @extend .fs165;
+    @extend .col-md-4;
+    color: $primary-text-color;
+  }
+
+  &-item__type {
+    @extend .col-md-1;
+    @extend .fs144;
+    color: $secondary-text-color;
+  }
+
+  &-item__guarantee {
+    @extend .col-md-2;
+  }
+
+  &-item__guarantee-text {
+    @extend .fs144;
+    display: inline-block;
+    color: $secondary-text-color;
+    width: 35px;
+    margin-right: 4px;
+  }
+
+  &-item__guarantee-date {
+    @extend .fs145;
+    color: $primary-text-color;
+  }
+
+
+  &-item__price {
+    @extend .col-md-1;
+  }
+
+  &-item__price-usd {
+    @extend .fs144;
+    color: $secondary-text-color;
+  }
+
+  &-item__price-uah {
+    @extend .fs155;
+    color: $primary-text-color;
+  }
+
+  &-item__order {
+    @extend .fs145;
+    @extend .col-md-3;
+  }
+
+  &-item__trash {
+    //@extend .col-md-1;
+  }
 }

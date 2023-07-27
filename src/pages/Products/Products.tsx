@@ -1,39 +1,19 @@
-import { ListGroup } from 'react-bootstrap';
 import { useProducts } from '../../hooks/useProducts';
 import { Loader } from '../../components/Loader/Loader';
+import { ProductsBar } from './components/ProductsBar';
+import { ProductsList } from './components/ProductsList';
 
 export default function Products() {
-  const { products, isLoading, error } = useProducts();
+  const { visibleProducts, isLoading, error } = useProducts();
 
   return (
     <>
-      <h1 className="orders-title">Products</h1>
-
+      <ProductsBar />
       {isLoading && !error && <Loader />}
       {!isLoading && !error && (
-        <ListGroup as="ul">
-          {products.map(product => {
-            const { id, title, type, guarantee, price, order } = product;
-
-            return (
-              <ListGroup.Item as="li" key={id}>
-                <div>{title}</div>
-                <div>{type}</div>
-                <div>
-                  <div>{guarantee.start}</div>
-                  <div>{guarantee.end}</div>
-                </div>
-                <div>
-                  {price.map(item => {
-                    return <div>{`price: ${item.value} ${item.symbol}`}</div>;
-                  })}
-                </div>
-                <div>{`Order: ${order}`}</div>
-              </ListGroup.Item>
-            );
-          })}
-        </ListGroup>
+        <ProductsList visibleProducts={visibleProducts} />
       )}
+      {!isLoading && error && <h2>Issue With Products Loading</h2>}
     </>
   );
 }

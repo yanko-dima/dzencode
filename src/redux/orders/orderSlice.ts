@@ -1,7 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { getOrders } from './operations';
+import { deleteOrder, getOrders } from './operations';
 import {
-  handleOrdersFulfilled,
+  handleDeleteOrderFulfilled,
+  handleGetOrdersFulfilled,
   handleOrdersPending,
   handleOrdersReject,
 } from '../../utils/redux';
@@ -20,8 +21,11 @@ const orderSlice = createSlice({
   extraReducers: builder => {
     builder
       .addCase(getOrders.pending, handleOrdersPending)
-      .addCase(getOrders.fulfilled, handleOrdersFulfilled)
-      .addCase(getOrders.rejected, handleOrdersReject);
+      .addCase(getOrders.fulfilled, handleGetOrdersFulfilled)
+      .addCase(getOrders.rejected, handleOrdersReject)
+      .addCase(deleteOrder.pending, handleOrdersPending)
+      .addCase(deleteOrder.fulfilled, handleDeleteOrderFulfilled)
+      .addCase(deleteOrder.rejected, handleOrdersReject);
   },
 });
 

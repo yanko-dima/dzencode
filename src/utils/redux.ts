@@ -16,8 +16,7 @@ export const handleProductsFulfilled = (
   action: PayloadAction<
     any,
     string,
-    { arg: void; requestId: string; requestStatus: 'fulfilled' },
-    never
+    { arg: void; requestId: string; requestStatus: 'fulfilled' }
   >
 ) => {
   state.isLoading = false;
@@ -26,18 +25,45 @@ export const handleProductsFulfilled = (
 };
 
 // Fulfilled
-export const handleOrdersFulfilled = (
+export const handleGetOrdersFulfilled = (
   state: IOrdersState,
   action: PayloadAction<
     any,
     string,
-    { arg: void; requestId: string; requestStatus: 'fulfilled' },
-    never
+    { arg: void; requestId: string; requestStatus: 'fulfilled' }
   >
 ) => {
   state.isLoading = false;
   state.items = action.payload;
   state.error = null;
+};
+
+export const handleDeleteOrderFulfilled = (
+  state: IOrdersState,
+  action: PayloadAction<
+    any,
+    string,
+    { arg: string; requestId: string; requestStatus: 'fulfilled' }
+  >
+) => {
+  state.isLoading = false;
+  state.error = null;
+  const index = state.items.findIndex(item => item.id === action.payload.id);
+  state.items.splice(index, 1);
+};
+
+export const handleDeleteProductFulfilled = (
+  state: IProductState,
+  action: PayloadAction<
+    any,
+    string,
+    { arg: string; requestId: string; requestStatus: 'fulfilled' }
+  >
+) => {
+  state.isLoading = false;
+  state.error = null;
+  const index = state.items.findIndex(item => item.id === action.payload.id);
+  state.items.splice(index, 1);
 };
 
 // Reject

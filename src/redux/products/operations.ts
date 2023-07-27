@@ -4,9 +4,9 @@ import { AxiosInstance } from '../../api/AxiosInstance';
 
 const {
   FETCH_PRODUCTS,
-  FETCH_PRODUCT_BY_ID,
-  CREATE_PRODUCT,
-  UPDATE_PRODUCT,
+  // FETCH_PRODUCT_BY_ID,
+  // CREATE_PRODUCT,
+  // UPDATE_PRODUCT,
   DELETE_PRODUCT,
 } = PRODUCTS;
 
@@ -23,4 +23,15 @@ export const getProducts = createAsyncThunk(
   }
 );
 
-// export const
+export const deleteProduct = createAsyncThunk(
+  DELETE_PRODUCT,
+  async (id: string, thunkAPI) => {
+    try {
+      const res = await AxiosInstance.delete(`/products/${id}`);
+
+      return res.data;
+    } catch (err) {
+      return thunkAPI.rejectWithValue((err as Error).message);
+    }
+  }
+);

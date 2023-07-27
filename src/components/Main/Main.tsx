@@ -9,7 +9,7 @@ export const Main = () => {
         <div className="row">
           <NavigationMenu />
 
-          <div className="col py-2">
+          <div className="col py-3 px-4">
             <Suspense fallback={null}>
               <Outlet />
             </Suspense>
