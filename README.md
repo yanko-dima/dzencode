@@ -1,14 +1,14 @@
 # Getting Started DzenCode TestApp:
 
-1. Склонируйте репозитарий;
+1. Clone the repository;
 
-2. Откройте склонированный репозитарий в вашей IDE;
+2. Open the cloned repository in your IDE;
 
-3. Выполните установку файлов зависимостей проекра с помощью: ### `npm install`
+3. Install the project dependency files with: `npm install`
 
-4. Сделайте билд файлов Docker с помощью: ### `docker-compose build`
+4. Build the Docker files with: `docker-compose build`
 
-5. Запустите Docker: ### `docker-compose up -d client`
+5. Run Docker: `docker-compose up -d client`
 
 ## Used technologies
 
