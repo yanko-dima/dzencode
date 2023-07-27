@@ -4,17 +4,11 @@
 
 2. Откройте склонированный репозитарий в вашей IDE;
 
-3. Выполните установку файлов зависимостей проекра с помощью:
+3. Выполните установку файлов зависимостей проекра с помощью: ### `npm install`
 
-### `npm install`
+4. Сделайте билд файлов Docker с помощью: ### `docker-compose build`
 
-4. Сделайте билд файлов Docker с помощью:
-
-### `docker-compose build`
-
-5. Запустите Docker:
-
-### `docker-compose up -d client`
+5. Запустите Docker: ### `docker-compose up -d client`
 
 ## Used technologies
 
