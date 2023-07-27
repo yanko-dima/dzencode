@@ -13,9 +13,9 @@ export const OrdersItemDate: React.FC<IOrdersItemDate> = ({ createdAt }) => {
   const secondDate = getSecondFormatDate(date);
 
   return (
-    <div className={'p-2'} style={{ display: 'flex', flexDirection: 'column' }}>
-      <span>{firstDade}</span>
-      <span>{secondDate}</span>
+    <div className={'orders-item__date p-2'}>
+      <span className={'orders-item__date-first'}>{firstDade}</span>
+      <span className={'orders-item__date-second'}>{secondDate}</span>
     </div>
   );
 };

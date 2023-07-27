@@ -4,22 +4,103 @@
   }
 
   &-list__wrapper {
+    position: relative;
     display: flex;
     gap: 12px;
   }
 
-  &-list {
-    gap: 12px;
+  &-list__large {
+    @extend .vertical-center;
+    @extend .space-between;
+    @extend .col-md-12;
+  }
+
+  &-list__small {
+    @extend .vertical-center;
+    @extend .space-between;
+    @extend .col-md-4;
   }
 
   &-item {
     @extend .vertical-center;
-    gap: 12px;
-    border: 1px solid $primary-border-color;
+    @extend .space-between;
+    border: 1px solid $body-bg;
+    border-radius: 8px;
+    box-shadow: $primary-box-shadow;
+    padding: 4px;
+  }
+
+  &-item:not(:last-child) {
+    margin-bottom: 12px;
+  }
+
+  &-item__wrapper {
+    @extend .vertical-center;
+    @extend .space-between;
+    width: 100%;
+  }
+
+  &-item__title {
+    @extend .fs165;
+    @extend .col-md-5;
+    color: $primary-text-color;
+  }
+
+  &-item__quantity-wrap {
+    @extend .flex-column;
+    @extend .col-md-2;
+  }
+
+  &-item__quantity-number {
+    @extend .fs186;
+    color: $primary-text-color;
+  }
+
+  &-item__quantity-name {
+    @extend .fs144;
+    color: $secondary-text-color;
+  }
+
+  &-item__date {
+    @extend .flex-column;
+    @extend .col-md-3;
+  }
+
+  &-item__date-first {
+    @extend .fs145;
+    color: $secondary-text-color;
+  }
+
+  &-item__date-second {
+    @extend .fs155;
+    color: $primary-text-color;
+  }
+
+  &-item__sum {
+    @extend .flex-column;
+    @extend .col-md-2;
+  }
+
+  &-item__sum-usd {
+    @extend .fs144;
+    color: $secondary-text-color;
+  }
+
+  &-item__sum-uah {
+    @extend .fs145;
+    color: $primary-text-color;
   }
 
   &-products-wrap {
     position: relative;
+  }
+
+  &-products__item {
+    @extend .vertical-center;
+    @extend .space-between;
+    border: 1px solid $body-bg;
+    border-radius: 8px;
+    box-shadow: $primary-box-shadow;
   }
 
   &-products-close {
@@ -35,25 +116,6 @@
     border: 1px solid $primary-border-color;
     border-radius: 25px;
     box-shadow: $primary-box-shadow;
-  }
-
-  &-item__title {
-    @extend .fs165;
-    color: $primary-text-color;
-  }
-
-  &-item__quantity-wrap {
-    @extend .flex-column;
-  }
-
-  &-item__quantity-number {
-    @extend .fs165;
-    color: $primary-text-color;
-  }
-
-  &-item__quantity-name {
-    @extend .fs145;
-    color: $secondary-text-color;
   }
 
 }

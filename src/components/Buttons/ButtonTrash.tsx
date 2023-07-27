@@ -5,15 +5,18 @@ import { IButtonTrash } from '../../models/IButtons';
 export const ButtonTrash: React.FC<IButtonTrash> = ({
   handleDeleteIconClick,
   id,
+  style,
 }) => {
   return (
-    <a
+    <button
+      type="button"
       onClick={() => {
         handleDeleteIconClick(id);
       }}
       className={'button-trash__link p-2'}
+      style={style}
     >
       <MdDeleteForever className={'button-trash__icon'} />
-    </a>
+    </button>
   );
 };

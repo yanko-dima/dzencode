@@ -14,7 +14,9 @@ export const OrdersList: React.FC<IOrdersList> = ({
 }) => {
   return (
     <div className={'orders-list__wrapper'}>
-      <ListGroup className={'orders-list'}>
+      <ListGroup
+        className={!isOrderOpen ? 'orders-list__large' : 'orders-list__small'}
+      >
         <OrdersItem
           orders={orders}
           handleRowClick={handleRowClick}

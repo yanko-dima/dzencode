@@ -5,8 +5,8 @@ import { OrdersItemDate } from './OrdersItemDate';
 import { ModalDeleteOrder } from '../../../components/Modals/ModalDeleteOrder';
 import { ButtonTrash } from '../../../components/Buttons/ButtonTrash';
 import { OrdersItemSum } from './OrdersItemSum';
-import { IOrdersItem } from '../../../models/IOrders';
 import { OrdersItemQuantity } from './OrdersItemQuantity';
+import { IOrdersItem } from '../../../models/IOrders';
 
 export const OrdersItem: React.FC<IOrdersItem> = ({
   orders,
@@ -38,7 +38,7 @@ export const OrdersItem: React.FC<IOrdersItem> = ({
         return (
           <ListGroup.Item className={'orders-item'} key={id} action>
             <div
-              className={'vertical-center'}
+              className={'orders-item__wrapper'}
               onClick={() => handleRowClick(id)}
             >
               {!isOrderOpen && (
@@ -53,6 +53,7 @@ export const OrdersItem: React.FC<IOrdersItem> = ({
               <ButtonTrash
                 handleDeleteIconClick={handleDeleteIconClick}
                 id={id}
+                style={{ marginRight: 8 }}
               />
             )}
           </ListGroup.Item>

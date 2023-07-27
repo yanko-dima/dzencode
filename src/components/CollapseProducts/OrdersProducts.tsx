@@ -32,13 +32,14 @@ export const OrdersProducts: React.FC<IOrdersProducts> = ({
                     <ListGroup.Item
                       key={id}
                       style={{ display: 'flex', gap: 12 }}
+                      className={'orders-products__item'}
                     >
                       <div>
                         {photo && (
                           <img
                             src={photo}
                             alt={title}
-                            style={{ width: 80, height: 80 }}
+                            style={{ width: 50, height: 50 }}
                           />
                         )}
                       </div>

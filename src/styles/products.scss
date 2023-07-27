@@ -31,13 +31,13 @@
 }
 
 
-  &-lisst__wrapper {
-
-  }
-
-  &-list {
-
-  }
+  //&-list__wrapper {
+  //
+  //}
+  //
+  //&-list {
+  //
+  //}
 
   &-item {
     @extend .vertical-center;
@@ -45,6 +45,7 @@
     border: 1px solid $body-bg;
     border-radius: 8px;
     box-shadow: $primary-box-shadow;
+    padding: 4px;
   }
 
   &-item:hover, &-item:focus {
@@ -96,7 +97,7 @@
   }
 
   &-item__price-uah {
-    @extend .fs155;
+    @extend .fs145;
     color: $primary-text-color;
   }
 

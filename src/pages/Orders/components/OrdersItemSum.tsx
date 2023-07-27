@@ -17,13 +17,13 @@ export const OrdersItemSum: React.FC<IOrdersItemSum> = ({ orderId }) => {
       .reduce((acc, value) => acc + value, 0);
   };
 
-  const uahSum = getSum('UAH');
   const usdSum = getSum('USD');
+  const uahSum = getSum('UAH');
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column' }}>
-      <span>{`${usdSum} USD`}</span>
-      <span>{`${uahSum} UAH`}</span>
+    <div className={'orders-item__sum p-2'}>
+      <span className={'orders-item__sum-usd'}>{`${usdSum} USD`}</span>
+      <span className={'orders-item__sum-uah'}>{`${uahSum} UAH`}</span>
     </div>
   );
 };
