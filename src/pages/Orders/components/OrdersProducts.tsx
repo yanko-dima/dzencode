@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Collapse, CloseButton } from 'react-bootstrap';
+import { CloseButton } from 'react-bootstrap';
 import { useProducts } from '../../../hooks/useProducts';
 import { Loader } from '../../../components/Loader/Loader';
 import { OrdersProductsList } from './OrdersProductsList';
@@ -20,30 +20,23 @@ export const OrdersProducts: React.FC<IOrdersProducts> = ({
 
   return (
     <div
-      className={'products__overlay'}
-      // className={
-      //   !isOrderOpen ? 'orders-products__close' : 'orders-products__open'
-      // }
+      className={!isOrderOpen ? 'orders__overlay' : 'orders__overlay active'}
     >
-      <Collapse in={isOrderOpen} dimension="width">
-        <div className={'orders-products__wrap'}>
-          <Card body className={'orders-products__card'}>
-            <h2 className={'orders-products__title'}>{orderName}</h2>
-            {isLoading && !error && <Loader />}
-            {!isLoading && !error && filteredProducts.length ? (
-              <OrdersProductsList filteredProducts={filteredProducts} />
-            ) : (
-              <h5 className={'products-title__placeholder'}>
-                No products in order
-              </h5>
-            )}
-          </Card>
-          <CloseButton
-            className={'orders-products-close'}
-            onClick={handleCloseProducts}
-          />
-        </div>
-      </Collapse>
+      <div className={'orders__products-wrap p-3'}>
+        <h2 className={'orders-products__title'}>{orderName}</h2>
+        {isLoading && !error && <Loader />}
+        {!isLoading && !error && filteredProducts.length ? (
+          <OrdersProductsList filteredProducts={filteredProducts} />
+        ) : (
+          <h5 className={'products-title__placeholder'}>
+            No products in order
+          </h5>
+        )}
+        <CloseButton
+          className={'orders-products-close'}
+          onClick={handleCloseProducts}
+        />
+      </div>
     </div>
   );
 };

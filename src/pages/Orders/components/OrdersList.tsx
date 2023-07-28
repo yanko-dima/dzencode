@@ -18,7 +18,7 @@ export const OrdersList: React.FC<IOrdersList> = ({
   return (
     <div className={'orders__overlay-box'}>
       <ListGroup
-        className={!isOrderOpen ? 'orders__list-large' : 'orders__list-small'}
+        className={!isOrderOpen ? 'orders__list' : 'orders__list active'}
       >
         <OrdersItem
           orders={orders}
