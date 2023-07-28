@@ -19,7 +19,7 @@ export const useOrders = () => {
     if (!orders.length) {
       dispatch(getOrders());
     }
-  }, [orders]);
+  }, [orders, dispatch]);
 
   return {
     orders,

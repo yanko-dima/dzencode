@@ -20,7 +20,7 @@ export const useProducts = () => {
     if (!products.length) {
       dispatch(getProducts());
     }
-  }, [products]);
+  }, [products, dispatch]);
 
   return {
     products,
