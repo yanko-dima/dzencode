@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useAppDispatch } from './redux';
 import { useSelector } from 'react-redux';
 import {
@@ -5,7 +6,6 @@ import {
   selectIsOrdersLoading,
   selectOrdersError,
 } from '../redux/orders/selectors';
-import { useEffect, useMemo } from 'react';
 import { getOrders } from '../redux/orders/operations';
 
 export const useOrders = () => {
@@ -15,22 +15,15 @@ export const useOrders = () => {
   const isLoading = useSelector(selectIsOrdersLoading);
   const error = useSelector(selectOrdersError);
 
-  const memoOrders = useMemo(() => orders, [orders]);
-
-  const getOrderName = (orderId: string) => {
-    const findOrder = memoOrders.find(order => order.id === orderId);
-
-    return findOrder ? findOrder.title : `Order: ${orderId}`;
-  };
-
   useEffect(() => {
-    dispatch(getOrders());
-  }, [dispatch]);
+    if (!orders.length) {
+      dispatch(getOrders());
+    }
+  }, [orders]);
 
   return {
-    orders: memoOrders,
+    orders,
     isLoading,
     error,
-    getOrderName,
   };
 };

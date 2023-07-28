@@ -5,7 +5,7 @@ import {
   handleProductsFulfilled,
   handleProductsPending,
   handleProductsReject,
-} from '../../utils/redux';
+} from '../../halpers/redux';
 import { IProductState } from '../../models/IProducts';
 
 const initialState: IProductState = {

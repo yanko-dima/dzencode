@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { ListGroup } from 'react-bootstrap';
-import { useProducts } from '../../../hooks/useProducts';
 import { OrdersItemDate } from './OrdersItemDate';
 import { DeleteOrder } from '../../../components/Modals/DeleteOrder/DeleteOrder';
 import { ButtonTrash } from '../../../components/Buttons/ButtonTrash';
@@ -14,9 +13,9 @@ export const OrdersItem: React.FC<IOrdersItem> = ({
   isOrderOpen,
   orderId,
   setOrderId,
+  products,
 }) => {
   const [showModal, setShowModal] = useState<boolean>(false);
-  const { products } = useProducts();
 
   const handleModalShowToggle = () => {
     setShowModal(!showModal);
@@ -49,7 +48,9 @@ export const OrdersItem: React.FC<IOrdersItem> = ({
                 isOrderOpen={isOrderOpen}
               />
               <OrdersItemDate createdAt={createdAt} isOrderOpen={isOrderOpen} />
-              {!isOrderOpen && <OrdersItemSum orderId={id} />}
+              {!isOrderOpen && (
+                <OrdersItemSum products={products} orderId={id} />
+              )}
             </div>
 
             {!isOrderOpen && (

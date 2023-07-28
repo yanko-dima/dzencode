@@ -1,3 +1,5 @@
+import { IOrder } from './IOrders';
+
 export interface IProductGuarantee {
   start: string;
   end: string;
@@ -31,6 +33,7 @@ export interface IProductsList {
 
 export interface IProductsItem {
   visibleProducts: IProduct[];
+  orders: IOrder[];
 }
 
 export interface IProductsItemGuarantee {
@@ -45,7 +48,8 @@ export interface IProductsItemPrice {
 }
 
 export interface IProductsItemOrder {
-  order: string;
+  orders: IOrder[];
+  orderId: string;
 }
 
 export interface IProductsItemTrash {

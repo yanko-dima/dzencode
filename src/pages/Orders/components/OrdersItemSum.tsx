@@ -1,10 +1,12 @@
 import React from 'react';
-import { useProducts } from '../../../hooks/useProducts';
+import { getOrderProducts } from '../../../halpers/products';
 import { IOrdersItemSum } from '../../../models/IOrders';
 
-export const OrdersItemSum: React.FC<IOrdersItemSum> = ({ orderId }) => {
-  const { getOrderProducts } = useProducts();
-  const filteredProducts = getOrderProducts(orderId);
+export const OrdersItemSum: React.FC<IOrdersItemSum> = ({
+  products,
+  orderId,
+}) => {
+  const filteredProducts = getOrderProducts(products, orderId);
 
   const getSum = (currency: string) => {
     return filteredProducts

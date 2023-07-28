@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from 'react';
+import { useEffect } from 'react';
 import { useAppDispatch } from './redux';
 import { useSelector } from 'react-redux';
 import {
@@ -16,22 +16,16 @@ export const useProducts = () => {
   const isLoading = useSelector(selectIsProductsLoading);
   const error = useSelector(selectProductsError);
 
-  const memoProducts = useMemo(() => products, [products]);
-  const memoVisibleProducts = useMemo(() => visibleProducts, [visibleProducts]);
-
-  const getOrderProducts = (orderId: string) => {
-    return memoProducts.filter(product => product.order === orderId);
-  };
-
   useEffect(() => {
-    dispatch(getProducts());
-  }, [dispatch]);
+    if (!products.length) {
+      dispatch(getProducts());
+    }
+  }, [products]);
 
   return {
-    products: memoProducts,
-    visibleProducts: memoVisibleProducts,
+    products,
+    visibleProducts,
     isLoading,
     error,
-    getOrderProducts,
   };
 };

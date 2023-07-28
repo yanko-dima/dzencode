@@ -8,7 +8,10 @@ import { ProductsItemOrder } from './ProductsItemOrder';
 import { ProductsItemTrash } from './ProductsItemTrash';
 import { IProductsItem } from '../../../models/IProducts';
 
-export const ProductsItem: React.FC<IProductsItem> = ({ visibleProducts }) => {
+export const ProductsItem: React.FC<IProductsItem> = ({
+  visibleProducts,
+  orders,
+}) => {
   const dispatch = useAppDispatch();
 
   const handleDeleteProduct = (id: string) => {
@@ -26,7 +29,7 @@ export const ProductsItem: React.FC<IProductsItem> = ({ visibleProducts }) => {
             <div className={'products-item__type p-2'}>{type}</div>
             <ProductsItemGuarantee guarantee={guarantee} />
             <ProductsItemPrice price={price} />
-            <ProductsItemOrder order={order} />
+            <ProductsItemOrder orderId={order} orders={orders} />
             <ProductsItemTrash
               handleDeleteProduct={handleDeleteProduct}
               id={id}

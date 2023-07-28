@@ -17,6 +17,7 @@ export interface IOrdersProducts {
   isOrderOpen: boolean;
   handleCloseProducts: () => void;
   orderId: string;
+  orders: IOrder[];
 }
 
 export interface IOrdersList {
@@ -33,10 +34,12 @@ export interface IOrdersItem {
   setOrderId: (id: string) => void;
   isOrderOpen: boolean;
   orders: IOrder[];
+  products: IProduct[];
   orderId: string;
 }
 
 export interface IOrdersItemSum {
+  products: IProduct[];
   orderId: string;
 }
 

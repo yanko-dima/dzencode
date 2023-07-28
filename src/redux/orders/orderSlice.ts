@@ -5,7 +5,7 @@ import {
   handleGetOrdersFulfilled,
   handleOrdersPending,
   handleOrdersReject,
-} from '../../utils/redux';
+} from '../../halpers/redux';
 import { IOrdersState } from '../../models/IOrders';
 
 const initialState: IOrdersState = {

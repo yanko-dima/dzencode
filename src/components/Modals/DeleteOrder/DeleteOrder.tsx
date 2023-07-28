@@ -5,6 +5,7 @@ import { Loader } from '../../Loader/Loader';
 import { useAppDispatch } from '../../../hooks/redux';
 import { deleteOrder } from '../../../redux/orders/operations';
 import { DeleteOrderList } from './DeleteOrderList';
+import { getOrderProducts } from '../../../halpers/products';
 import { IModalDeleteOrder } from '../../../models/IModals';
 
 export const DeleteOrder: React.FC<IModalDeleteOrder> = ({
@@ -14,8 +15,8 @@ export const DeleteOrder: React.FC<IModalDeleteOrder> = ({
 }) => {
   const dispatch = useAppDispatch();
 
-  const { getOrderProducts, isLoading, error } = useProducts();
-  const filteredProducts = getOrderProducts(orderId);
+  const { products, isLoading, error } = useProducts();
+  const filteredProducts = getOrderProducts(products, orderId);
 
   const handleDeleteOrder = (id: string) => {
     dispatch(deleteOrder(id));

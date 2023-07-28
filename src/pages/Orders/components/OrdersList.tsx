@@ -2,6 +2,7 @@ import React from 'react';
 import { ListGroup } from 'react-bootstrap';
 import { OrdersProducts } from './OrdersProducts';
 import { OrdersItem } from './OrdersItem';
+import { useProducts } from '../../../hooks/useProducts';
 import { IOrdersList } from '../../../models/IOrders';
 
 export const OrdersList: React.FC<IOrdersList> = ({
@@ -12,10 +13,12 @@ export const OrdersList: React.FC<IOrdersList> = ({
   orders,
   setOrderId,
 }) => {
+  const { products } = useProducts();
+
   return (
-    <div className={'orders-list__wrapper'}>
+    <div className={'orders__overlay-box'}>
       <ListGroup
-        className={!isOrderOpen ? 'orders-list__large' : 'orders-list__small'}
+        className={!isOrderOpen ? 'orders__list-large' : 'orders__list-small'}
       >
         <OrdersItem
           orders={orders}
@@ -23,6 +26,7 @@ export const OrdersList: React.FC<IOrdersList> = ({
           isOrderOpen={isOrderOpen}
           orderId={orderId}
           setOrderId={setOrderId}
+          products={products}
         />
       </ListGroup>
 
@@ -30,6 +34,7 @@ export const OrdersList: React.FC<IOrdersList> = ({
         isOrderOpen={isOrderOpen}
         handleCloseProducts={handleCloseProducts}
         orderId={orderId}
+        orders={orders}
       />
     </div>
   );
